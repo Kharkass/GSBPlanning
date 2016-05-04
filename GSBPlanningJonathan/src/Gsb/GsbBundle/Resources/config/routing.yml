@@ -1,0 +1,24 @@
+gsb_gsb_homepage:
+    path:     /
+    defaults: { _controller: GsbGsbBundle:Default:index }
+gsb_gsb_dashboard:
+    path:    /admin
+    defaults: { _controller: GsbGsbBundle:Default:dashboard }
+gsb_gsb_employe:
+    path:    /employe
+    defaults: { _controller: GsbGsbBundle:Default:employe }
+gsb_gsb_modifier:
+    path:    /modifier
+    defaults: { _controller: GsbGsbBundle:Default:modifier }
+gsb_gsb_planning:
+    path:    /planning
+    defaults: { _controller: GsbGsbBundle:Default:planning }
+gsb_gsb_ajout:
+    path:    /ajout
+    defaults: { _controller: GsbGsbBundle:Default:ajout }
+gsb_gsb_deconnexion:
+    path:    /deconnexion
+    defaults: { _controller: GsbGsbBundle:Default:deconnexion }
+gsb_gsb_sendmail:
+    path:    /sendmail
+    defaults: { _controller: GsbGsbBundle:Default:sendmail }

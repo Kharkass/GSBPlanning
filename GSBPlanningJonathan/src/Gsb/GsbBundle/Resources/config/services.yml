@@ -1,0 +1,4 @@
+services:
+#    gsb_gsb.example:
+#        class: Gsb\GsbBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

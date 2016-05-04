@@ -1,0 +1,38 @@
+<html class="index">
+<body class="index">
+</html><link rel="stylesheet" href="{{ asset('bundles/framework/css/cssGeneral.css') }}" type="text/css" />
+<br>
+<center>
+    <p style="color:white;font-size:3rem;font-family:Segoe UI;">
+        Laboratoire GSB
+    </p>
+</center>
+<br><br>
+<div class="site">
+    <div class="login">
+        <center>
+            <form name="connexion" method="POST">
+                <br>
+                <Legend><h1>Espace Administrateur</h1></Legend>
+                <p>
+                    <input id="mail" type="text" name="mail" placeholder="E-Mail Client" style="height:2.2rem;" required="required"/></br>
+                </p>
+                <p>
+                    <input id="mdp" type="password" name="mdp" placeholder="Mot de Passe"  style="height:2.2rem;" required="required"/>
+                </p>
+                <p>
+                    <input type="submit" value="Connexion" name="submit" class="btn btn-primary btn-block btn-large">
+                </p>
+
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <center><div class="flashnotice">
+                            {{ flashMessage }}
+                        </div></center>
+                {% endfor %}
+
+            </form>
+        </center>
+    </div>
+</div>
+</body>
+</html>

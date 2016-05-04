@@ -1,0 +1,68 @@
+<html>
+<body>
+<link rel="stylesheet" href="{{ asset('bundles/framework/css/cssGeneral.css') }}" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!--<div id="dashboard">
+    <center><h2>Outil de Gestion GSB</h2><br></center>
+    <div id="l1en">
+        <div class="menu"><a href="./admin"><FONT size="5.5"><i class="fa fa-home"></i> Accueil</FONT></span></a></div>
+        <div class="menu"><a href="./employe"><FONT size="5.5"><i class="fa fa-users"></i> Employés</FONT></span></a></div>
+        <div class="menu"><a href="./ajout"><FONT size="5.5"><i class="fa fa-plus"></i> Ajouter événement</FONT></span></a></div>
+        <div class="menu"><a class="deco" href="./deconnexion"><FONT size="5.5"><i class="fa fa-times"></i> Déconnexion</FONT></span></a></div>
+    </div>
+</div>-->
+
+<div style="background-color:#293F54;color:#ffffff;font-size: 2rem;padding-top:0.5rem;"><center> Outil de Gestion GSB</center></div>
+<nav id="nav-1">
+    <a href="./admin" class="link-1" href="#"> <i class="fa fa-home"></i> Accueil</a>
+    <a href="./employe" class="link-1" href="#"> <i class="fa fa-users"></i> Employés</a>
+    <a href="./ajout" class="link-1" href="#"> <i class="fa fa-plus"></i> Ajouter événement</a>
+    <a href="./deconnexion" class="link-1" href="#"> <i class="fa fa-times"></i> Déconnexion</a>
+</nav>
+<center>
+<div id="conteneur">
+    <h1 style="margin-left:2.5%;">Liste des employés</h1>
+
+    <b style="margin-left:2.5%">Trier par</b></br>
+
+    <form style="margin-left:2.5%; float:left; margin-top:1rem;" name="recup_cat" method="POST">
+        <input style="margin-left:2.5%;float:left;" class="btnSite" type="submit" name="Nom" value="Nom">
+    </form>
+    <form style="margin-left:2.5%; float:left; margin-top:1rem;" name="recup_cat" method="POST">
+        <input style="margin-left:2.5%;float:left;" class="btnSite" type="submit" name="Prenom" value="Prenom">
+    </form>
+    <br><br><br><br>
+    <b style="margin-left:2.5%">Barre de recherche</b></br>
+    <form style="margin-left: 2.5%;margin-top:1rem;" name="recherche" method="POST">
+        <input style="" class="site" type="text" name="champRecherche">
+        <input style="" type="submit" name="Rechercher" value="Rechercher" class="btnSite">
+    </form>
+
+    <center><table style="width:95%;margin-left:2.5%;">
+            <tr class="ligneBlanche">
+                <td><b>Avatar</b></td>
+                <td><b>Nom</b></td>
+                <td><b>Prénom</b></td>
+                <td><b>Adresse e-mail</b></td>
+                <td><b>Planning</b></td>
+            </tr>
+            {% for d in lesDonnees %}
+                <tr class="ligne">
+                <td style="border: 0px;"> <img style="wdith:100%;height:100%;" src="{{ d.image }}"> </td>
+                <td style="border: 0px;"> <i class="fa fa-user"></i> {{ d.nom }} </td>
+                <td style="border: 0px;"> <i class="fa fa-user"></i> {{ d.prenom }} </td>
+                <td style="border: 0px;"> <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ d.mail }} </td>
+                <td style="border: 0px;">
+                        <form style="margin-top:1rem;" name="Planning_Form" method="POST">
+                            <input type="hidden" name="id_cacher" value=" {{ d.id }}">
+                            <input type="submit" name="Planning" value="Planning" class="btnSite">
+                        </form>
+                    </td></tr>
+            {% endfor %}
+            </table>
+</center>
+</div>
+
+</body>
+</html>
