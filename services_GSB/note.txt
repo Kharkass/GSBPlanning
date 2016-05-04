@@ -1,0 +1,27 @@
+var LoginView = function(){
+   $('body').html(loginTpl());
+   var permanentStorage = window.localStorage;
+   if (permanentStorage.getItem("utilisateur")){
+      var util = permanentStorage.getItem("utilisateur");
+      $('.login').val( util);
+   }
+};
+
+
+ var permanentStorage = window.localStorage;
+            permanentStorage.setItem("utilisateur", login);
+			
+			
+			else{
+            alert('erreur');
+        }
+		
+		
+	public function RecupEvent($iduser)
+	{
+	$req = "select date_e,libelle_e, heure_e, duree from evenement inner join convoquer on convoquer.id_e = evenement.id_e where convoquer.id="$iduser;
+	$res = PdoGSB::$monpdo->query($req);
+	$LesLignes = $res->fetchAll();
+	return $LesLignes;
+	
+}
